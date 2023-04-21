@@ -2,10 +2,12 @@
 
 $colors : (
 	main : #4338ca,
-	title : #f8fafc,
+	title : #e2e8f0,
 	text : #cbd5e1,
-	placeholder : #94a3b8
+	placeholder : #94a3b8,
+	hover : #8b5cf6
 );
+$drop-filter : drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
 
 @function color($color) {
 	@return map-get($colors, $color)
@@ -35,6 +37,9 @@ input:-ms-input-placeholder {
     padding: 0;
 	border: none;
 }
+h1, h2, h3 {
+	color: color(title);
+}
 html, body {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
@@ -46,7 +51,6 @@ html, body {
 		width: 100%;
 
 		#header {
-			color :#f8fafc;
 			height: 8%;
 			background-color: darken(color(main), 40%);
 			position: relative;
@@ -78,49 +82,54 @@ html, body {
 					flex-direction: column;
 					justify-content: space-evenly;
 					align-items: center;
-					background-color: rgb(35, 40, 60);
+					background-image: linear-gradient(
+						to bottom,
+						darken(color(main), 20%),
+						darken(color(main), 30%)
+					);
 
 					#temp {
 						display: flex;
 						gap: 1rem;
 					}
+					.temperature {
+						font-weight: 300;
+					}
 					.units-switcher {
+						color: color(title);
 						transition: all 0.3s;
 						cursor: pointer;
 					}
 					.units-switcher:hover {
 						transition: all 0.3s;
-						color: rgb(186, 216, 255);
+						color: color(hover);
 					}
-					.location {
-						font-size: 1.7rem;
-					}
-					#main-info > .search-field {
+					.search-field {
 						background-color: transparent;
-						border-bottom: #fff solid 1px;
+						border-bottom: color(text) solid 1px;
 						outline: none;
-						font-size: 1.2rem;
+						font-size: 1rem;
+						color: color(text);
 						transition: all 0.3s;
-						width: 9rem;
+						width: 10rem;
 						text-align: center;
 					}
-					#main-info > .search-field:hover {
+					.search-field:hover {
 						transition: all 0.3s;
+						border-bottom: color(hover) solid 1px;
 						width: 13rem;
 					}
-					#main-info > .submit {
+					.submit {
 						cursor: pointer;
 						transition: all 0.3s;
-						color: rgb(255, 255, 255);
 					}
-					#main-info > .submit:hover {
+					.submit:hover {
 						transition: all 0.3s;
-						color: rgb(186, 216, 255);
+						color: color(hover);
 					}
-					#main-info > .weather-icon {
+					.weather-icon {
 						height: 3rem;
-						width: fit-content;
-						filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+						filter: $drop-filter;
 					}
 					
 				}
@@ -128,11 +137,13 @@ html, body {
 				#other-info {
 					display: grid;
 					grid-template-columns: 1fr 1fr 1fr;
-					background-color: rgb(25, 30, 50);
+					background-color: darken(color(main), 30%);
 					flex-grow: 1;
 
-					#other-info > * {
-						padding: 1rem;
+					> * {
+						> * {
+						padding-top: 1rem;
+						}
 					}
 				}
 			}
@@ -141,47 +152,30 @@ html, body {
 				display: grid;
 				grid-template-columns: repeat(5, 1fr);
 				flex-grow: 6;
-				
-				
-				#forecast-section-day-one {
-					background-color: rgb(45, 50, 70);
-				}
-				#forecast-section-day-two {
-					background-color: rgb(35, 40, 60);
-				}
-				#forecast-section-day-three {
-					background-color: rgb(25, 30, 50);
-				}
-				#forecast-section-day-four {
-					background-color: rgb(15, 20, 40);
-				}
-				#forecast-section-day-five {
-					background-color: rgb(5, 10, 30);
-				}
-				.forecast-icon-day-one {
-					height: 3rem;
-					width: fit-content;
-					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
-				}
-				.forecast-icon-day-two {
-					height: 3rem;
-					width: fit-content;
-					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
-				}
-				.forecast-icon-day-three {
-					height: 3rem;
-					width: fit-content;
-					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
-				}
-				.forecast-icon-day-four {
-					height: 3rem;
-					width: fit-content;
-					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
-				}
-				.forecast-icon-day-five {
-					height: 3rem;
-					width: fit-content;
-					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+
+				@for $i from 1 through 5 {
+					#forecast-section-day-#{$i} {
+						background-image: linear-gradient(
+							to bottom,
+							darken(darken(color(main), $i * 5%), 10%),
+							darken(color(main), $i * 5%),
+							darken(color(main), $i * 5%),
+							darken(darken(color(main), $i * 5%), 10%)
+						);
+						padding-top: 100%;
+						display: flex;
+						flex-direction: column;
+						gap: 1rem;
+						align-items: center;
+					}
+					.forecast-icon-day-#{$i} {
+						height: 4rem;
+						width: fit-content;
+						filter: $drop-filter;
+					}
+					.forecast-feels-like-day-#{$i} {
+						padding-top: 1rem;
+					}
 				}
 			}
 		}

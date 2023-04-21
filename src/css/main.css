@@ -35,6 +35,10 @@ input:-ms-input-placeholder {
   border: none;
 }
 
+h1, h2, h3 {
+  color: #e2e8f0;
+}
+
 html, body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -46,7 +50,6 @@ html #container, body #container {
   width: 100%;
 }
 html #container #header, body #container #header {
-  color: #f8fafc;
   height: 8%;
   background-color: #0e0b2b;
   position: relative;
@@ -76,109 +79,149 @@ html #container #main #current-weather #main-info, body #container #main #curren
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgb(35, 40, 60);
+  background-image: linear-gradient(to bottom, #28217b, #1b1653);
 }
 html #container #main #current-weather #main-info #temp, body #container #main #current-weather #main-info #temp {
   display: flex;
   gap: 1rem;
 }
+html #container #main #current-weather #main-info .temperature, body #container #main #current-weather #main-info .temperature {
+  font-weight: 300;
+}
 html #container #main #current-weather #main-info .units-switcher, body #container #main #current-weather #main-info .units-switcher {
+  color: #e2e8f0;
   transition: all 0.3s;
   cursor: pointer;
 }
 html #container #main #current-weather #main-info .units-switcher:hover, body #container #main #current-weather #main-info .units-switcher:hover {
   transition: all 0.3s;
-  color: rgb(186, 216, 255);
+  color: #8b5cf6;
 }
-html #container #main #current-weather #main-info .location, body #container #main #current-weather #main-info .location {
-  font-size: 1.7rem;
-}
-html #container #main #current-weather #main-info #main-info > .search-field, body #container #main #current-weather #main-info #main-info > .search-field {
+html #container #main #current-weather #main-info .search-field, body #container #main #current-weather #main-info .search-field {
   background-color: transparent;
-  border-bottom: #fff solid 1px;
+  border-bottom: #cbd5e1 solid 1px;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: #cbd5e1;
   transition: all 0.3s;
-  width: 9rem;
+  width: 10rem;
   text-align: center;
 }
-html #container #main #current-weather #main-info #main-info > .search-field:hover, body #container #main #current-weather #main-info #main-info > .search-field:hover {
+html #container #main #current-weather #main-info .search-field:hover, body #container #main #current-weather #main-info .search-field:hover {
   transition: all 0.3s;
+  border-bottom: #8b5cf6 solid 1px;
   width: 13rem;
 }
-html #container #main #current-weather #main-info #main-info > .submit, body #container #main #current-weather #main-info #main-info > .submit {
+html #container #main #current-weather #main-info .submit, body #container #main #current-weather #main-info .submit {
   cursor: pointer;
   transition: all 0.3s;
-  color: rgb(255, 255, 255);
 }
-html #container #main #current-weather #main-info #main-info > .submit:hover, body #container #main #current-weather #main-info #main-info > .submit:hover {
+html #container #main #current-weather #main-info .submit:hover, body #container #main #current-weather #main-info .submit:hover {
   transition: all 0.3s;
-  color: rgb(186, 216, 255);
+  color: #8b5cf6;
 }
-html #container #main #current-weather #main-info #main-info > .weather-icon, body #container #main #current-weather #main-info #main-info > .weather-icon {
+html #container #main #current-weather #main-info .weather-icon, body #container #main #current-weather #main-info .weather-icon {
   height: 3rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+  filter: drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
 }
 html #container #main #current-weather #other-info, body #container #main #current-weather #other-info {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgb(25, 30, 50);
+  background-color: #1b1653;
   flex-grow: 1;
 }
-html #container #main #current-weather #other-info #other-info > *, body #container #main #current-weather #other-info #other-info > * {
-  padding: 1rem;
+html #container #main #current-weather #other-info > * > *, body #container #main #current-weather #other-info > * > * {
+  padding-top: 1rem;
 }
 html #container #main #weather-forecast, body #container #main #weather-forecast {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   flex-grow: 6;
 }
-html #container #main #weather-forecast #forecast-section-day-one, body #container #main #weather-forecast #forecast-section-day-one {
-  background-color: rgb(45, 50, 70);
+html #container #main #weather-forecast #forecast-section-day-1, body #container #main #weather-forecast #forecast-section-day-1 {
+  background-image: linear-gradient(to bottom, #2e268f, #3b31b8, #3b31b8, #2e268f);
+  padding-top: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
-html #container #main #weather-forecast #forecast-section-day-two, body #container #main #weather-forecast #forecast-section-day-two {
-  background-color: rgb(35, 40, 60);
-}
-html #container #main #weather-forecast #forecast-section-day-three, body #container #main #weather-forecast #forecast-section-day-three {
-  background-color: rgb(25, 30, 50);
-}
-html #container #main #weather-forecast #forecast-section-day-four, body #container #main #weather-forecast #forecast-section-day-four {
-  background-color: rgb(15, 20, 40);
-}
-html #container #main #weather-forecast #forecast-section-day-five, body #container #main #weather-forecast #forecast-section-day-five {
-  background-color: rgb(5, 10, 30);
-}
-html #container #main #weather-forecast .forecast-icon-day-one, body #container #main #weather-forecast .forecast-icon-day-one {
-  height: 3rem;
+html #container #main #weather-forecast .forecast-icon-day-1, body #container #main #weather-forecast .forecast-icon-day-1 {
+  height: 4rem;
   width: -moz-fit-content;
   width: fit-content;
-  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+  filter: drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
 }
-html #container #main #weather-forecast .forecast-icon-day-two, body #container #main #weather-forecast .forecast-icon-day-two {
-  height: 3rem;
+html #container #main #weather-forecast .forecast-feels-like-day-1, body #container #main #weather-forecast .forecast-feels-like-day-1 {
+  padding-top: 1rem;
+}
+html #container #main #weather-forecast #forecast-section-day-2, body #container #main #weather-forecast #forecast-section-day-2 {
+  background-image: linear-gradient(to bottom, #28217b, #352ca3, #352ca3, #28217b);
+  padding-top: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+html #container #main #weather-forecast .forecast-icon-day-2, body #container #main #weather-forecast .forecast-icon-day-2 {
+  height: 4rem;
   width: -moz-fit-content;
   width: fit-content;
-  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+  filter: drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
 }
-html #container #main #weather-forecast .forecast-icon-day-three, body #container #main #weather-forecast .forecast-icon-day-three {
-  height: 3rem;
+html #container #main #weather-forecast .forecast-feels-like-day-2, body #container #main #weather-forecast .forecast-feels-like-day-2 {
+  padding-top: 1rem;
+}
+html #container #main #weather-forecast #forecast-section-day-3, body #container #main #weather-forecast #forecast-section-day-3 {
+  background-image: linear-gradient(to bottom, #211b67, #2e268f, #2e268f, #211b67);
+  padding-top: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+html #container #main #weather-forecast .forecast-icon-day-3, body #container #main #weather-forecast .forecast-icon-day-3 {
+  height: 4rem;
   width: -moz-fit-content;
   width: fit-content;
-  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+  filter: drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
 }
-html #container #main #weather-forecast .forecast-icon-day-four, body #container #main #weather-forecast .forecast-icon-day-four {
-  height: 3rem;
+html #container #main #weather-forecast .forecast-feels-like-day-3, body #container #main #weather-forecast .forecast-feels-like-day-3 {
+  padding-top: 1rem;
+}
+html #container #main #weather-forecast #forecast-section-day-4, body #container #main #weather-forecast #forecast-section-day-4 {
+  background-image: linear-gradient(to bottom, #1b1653, #28217b, #28217b, #1b1653);
+  padding-top: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+html #container #main #weather-forecast .forecast-icon-day-4, body #container #main #weather-forecast .forecast-icon-day-4 {
+  height: 4rem;
   width: -moz-fit-content;
   width: fit-content;
-  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+  filter: drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
 }
-html #container #main #weather-forecast .forecast-icon-day-five, body #container #main #weather-forecast .forecast-icon-day-five {
-  height: 3rem;
+html #container #main #weather-forecast .forecast-feels-like-day-4, body #container #main #weather-forecast .forecast-feels-like-day-4 {
+  padding-top: 1rem;
+}
+html #container #main #weather-forecast #forecast-section-day-5, body #container #main #weather-forecast #forecast-section-day-5 {
+  background-image: linear-gradient(to bottom, #14113f, #211b67, #211b67, #14113f);
+  padding-top: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+html #container #main #weather-forecast .forecast-icon-day-5, body #container #main #weather-forecast .forecast-icon-day-5 {
+  height: 4rem;
   width: -moz-fit-content;
   width: fit-content;
-  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+  filter: drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
+}
+html #container #main #weather-forecast .forecast-feels-like-day-5, body #container #main #weather-forecast .forecast-feels-like-day-5 {
+  padding-top: 1rem;
 }
 html #container #footer, body #container #footer {
   height: 8%;

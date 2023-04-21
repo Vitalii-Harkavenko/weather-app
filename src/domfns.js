@@ -20,11 +20,11 @@ function renderCurrentWeather(data) {
 };
 
 function renderFullForecast(data) {
-    renderForecast('one', 8, data);
-    renderForecast('two', 16, data);
-    renderForecast('three', 24, data);
-    renderForecast('four', 32, data);
-    renderForecast('five', 39, data);
+    renderForecast('1', 8, data);
+    renderForecast('2', 16, data);
+    renderForecast('3', 24, data);
+    renderForecast('4', 32, data);
+    renderForecast('5', 39, data);
 };
 
 function renderForecast(day, list, data) {

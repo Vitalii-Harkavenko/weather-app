@@ -25,7 +25,7 @@ export default function createPage() {
     const searchFlield = document.querySelector('.search-field');
     searchFlield.type = 'text';
     searchFlield.placeholder = 'Enter a location';
-    createContent('submit', 'submit', 'search', mainInfo);
+    createContent('submit', 'submit', 'Search', mainInfo);
 
     createSection('other-info', document.getElementById('current-weather'));
 
@@ -38,11 +38,11 @@ export default function createPage() {
 
     createSection('weather-forecast', main);
 
-    forecastContent('one');
-    forecastContent('two');
-    forecastContent('three');
-    forecastContent('four');
-    forecastContent('five');
+    forecastContent('1');
+    forecastContent('2');
+    forecastContent('3');
+    forecastContent('4');
+    forecastContent('5');
 
     function createContent(type, class_Name, text, parent) {
         let el = document.createElement(type);
