@@ -2,6 +2,7 @@ export default function createPage() {
 
     createSection('container', document.body);
     createSection('header', document.getElementById('container'));
+    createContent('h2', 'project', 'One Weather App More', document.getElementById('header'));
     createSection('main', document.getElementById('container'));
     createSection('footer', document.getElementById('container'));
     const main = document.getElementById('main');
@@ -11,104 +12,37 @@ export default function createPage() {
     createSection('main-info', document.getElementById('current-weather'));
     const mainInfo = document.getElementById('main-info');
 
-    createContent('p', 'location', '', mainInfo);
+    createContent('h1', 'location', '', mainInfo);
     createContent('p', 'description', '', mainInfo);
 
     createSection('temp', mainInfo);
     const temp = document.getElementById('temp');
-    createContent('p', 'temperature', '', temp);
+    createContent('h2', 'temperature', '', temp);
     createContent('p', 'units-switcher', '', temp);
 
     createContent('img', 'weather-icon', '', mainInfo);
     createContent('input', 'search-field', '', mainInfo);
+    const searchFlield = document.querySelector('.search-field');
+    searchFlield.type = 'text';
+    searchFlield.placeholder = 'Enter a location';
     createContent('submit', 'submit', 'search', mainInfo);
 
     createSection('other-info', document.getElementById('current-weather'));
-    const otherInfo = document.getElementById('other-info');
 
-    createSection('feels-like', otherInfo);
-    const feelsLike = document.getElementById('feels-like');
-    createContent('p', 'title', 'Feels like', feelsLike);
-    createContent('p', 'current-feels-like', '', feelsLike);
-
-    createSection('temp-max', otherInfo);
-    const tempMax = document.getElementById('temp-max');
-    createContent('p', 'title', 'Max temperature', tempMax);
-    createContent('p', 'current-temp-max', '', tempMax);
-
-    createSection('temp-min', otherInfo);
-    const tempMin = document.getElementById('temp-min');
-    createContent('p', 'title', 'Min temperature', tempMin);
-    createContent('p', 'current-temp-min', '', tempMin);
-
-    createSection('humidity', otherInfo);
-    const humidity = document.getElementById('humidity');
-    createContent('p', 'title', 'Humidity', humidity);
-    createContent('p', 'current-humidity', '', humidity);
-
-    createSection('pressure', otherInfo);
-    const pressure = document.getElementById('pressure');
-    createContent('p', 'title', 'Pressure', pressure);
-    createContent('p', 'current-pressure', '', pressure);
-
-    createSection('wind-speed', otherInfo);
-    const windSpeed = document.getElementById('wind-speed');
-    createContent('p', 'title', 'Wind speed', windSpeed);
-    createContent('p', 'current-wind-speed', '', windSpeed);
+    otherInfoContent('feels-like', 'Feels like');
+    otherInfoContent('temp-max', 'Max temperature')
+    otherInfoContent('temp-min', 'Min temperature');
+    otherInfoContent('humidity', 'Humidity');
+    otherInfoContent('pressure', 'Pressure');
+    otherInfoContent('wind-speed', 'Wind speed');
 
     createSection('weather-forecast', main);
-    const weatherForecast = document.getElementById('weather-forecast');
 
-    createSection('forecast-section-day-one', weatherForecast);
-    const forecastDayOne = document.getElementById('forecast-section-day-one');
-    createContent('p', 'forecast-temp-day-one', '', forecastDayOne);
-    createContent('p', 'forecast-desc-day-one', '', forecastDayOne);
-    createContent('img', 'forecast-icon-day-one', '', forecastDayOne);
-    createSection('forecast-feels-like-day-one', forecastDayOne);
-    const feelsLikeDayOne = document.getElementById('forecast-feels-like-day-one');
-    createContent('p', 'title', 'Feels like', feelsLikeDayOne);
-    createContent('p', 'forecast-feels-like-day-one', '', feelsLikeDayOne);
-
-
-    createSection('forecast-section-day-two', weatherForecast);
-    const forecastDayTwo = document.getElementById('forecast-section-day-two');
-    createContent('p', 'forecast-temp-day-two', '', forecastDayTwo);
-    createContent('p', 'forecast-desc-day-two', '', forecastDayTwo);
-    createContent('img', 'forecast-icon-day-two', '', forecastDayTwo);
-    createSection('forecast-feels-like-day-two', forecastDayTwo);
-    const feelsLikeDayTwo = document.getElementById('forecast-feels-like-day-two');
-    createContent('p', 'title', 'Feels like', feelsLikeDayTwo);
-    createContent('p', 'forecast-feels-like-day-two', '', feelsLikeDayTwo);
-    
-    createSection('forecast-section-day-three', weatherForecast);
-    const forecastDayThree = document.getElementById('forecast-section-day-three');
-    createContent('p', 'forecast-temp-day-three', '', forecastDayThree);
-    createContent('p', 'forecast-desc-day-three', '', forecastDayThree);
-    createContent('img', 'forecast-icon-day-three', '', forecastDayThree);
-    createSection('forecast-feels-like-day-three', forecastDayThree);
-    const feelsLikeDayThree = document.getElementById('forecast-feels-like-day-three');
-    createContent('p', 'title', 'Feels like', feelsLikeDayThree);
-    createContent('p', 'forecast-feels-like-day-three', '', feelsLikeDayThree);
-
-    createSection('forecast-section-day-four', weatherForecast);
-    const forecastDayFour = document.getElementById('forecast-section-day-four');
-    createContent('p', 'forecast-temp-day-four', '', forecastDayFour);
-    createContent('p', 'forecast-desc-day-four', '', forecastDayFour);
-    createContent('img', 'forecast-icon-day-four', '', forecastDayFour);
-    createSection('forecast-feels-like-day-four', forecastDayFour);
-    const feelsLikeDayFour = document.getElementById('forecast-feels-like-day-four');
-    createContent('p', 'title', 'Feels like', feelsLikeDayFour);
-    createContent('p', 'forecast-feels-like-day-four', '', feelsLikeDayFour);
-    
-    createSection('forecast-section-day-five', weatherForecast);
-    const forecastDayFive = document.getElementById('forecast-section-day-five');
-    createContent('p', 'forecast-temp-day-five', '', forecastDayFive);
-    createContent('p', 'forecast-desc-day-five', '', forecastDayFive);
-    createContent('img', 'forecast-icon-day-five', '', forecastDayFive);
-    createSection('forecast-feels-like-day-five', forecastDayFive);
-    const feelsLikeDayFive = document.getElementById('forecast-feels-like-day-five');
-    createContent('p', 'title', 'Feels like', feelsLikeDayFive);
-    createContent('p', 'forecast-feels-like-day-five', '', feelsLikeDayFive);
+    forecastContent('one');
+    forecastContent('two');
+    forecastContent('three');
+    forecastContent('four');
+    forecastContent('five');
 
     function createContent(type, class_Name, text, parent) {
         let el = document.createElement(type);
@@ -121,5 +55,23 @@ export default function createPage() {
         let el = document.createElement('div');
         el.id = id;
         parent.append(el);
+    };
+
+    function otherInfoContent(elClass, title) {
+        createSection(elClass, document.getElementById('other-info'));
+        let el = document.getElementById(elClass);
+        createContent('h3', 'title', title, el);
+        createContent('p', `current-${elClass}`, '', el);
+    }
+
+    function forecastContent(day) {
+        createSection(`forecast-section-day-${day}`, document.getElementById('weather-forecast'));
+        let el = document.getElementById(`forecast-section-day-${day}`);
+        createContent('h2', `forecast-temp-day-${day}`, '', el);
+        createContent('p', `forecast-desc-day-${day}`, '', el);
+        createContent('img', `forecast-icon-day-${day}`, '', el);
+        createSection(`forecast-feels-like-day-${day}`, el);
+        createContent('h3', 'title', 'Feels like', document.getElementById(`forecast-feels-like-day-${day}`));
+        createContent('p', `desc`, '', document.getElementById(`forecast-feels-like-day-${day}`));
     };
 };

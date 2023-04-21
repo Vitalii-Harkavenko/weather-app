@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+input::-moz-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #94a3b8;
+}
+input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #94a3b8;
+}
+
+input::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #94a3b8;
+}
+
+input::-moz-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #94a3b8;
+}
+
+input:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html, body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+}
+html #container, body #container {
+  height: 100%;
+  width: 100%;
+}
+html #container #header, body #container #header {
+  color: #f8fafc;
+  height: 8%;
+  background-color: #0e0b2b;
+  position: relative;
+}
+html #container #header .project, body #container #header .project {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 2rem;
+}
+html #container #main, body #container #main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 84%;
+  text-align: center;
+  color: #cbd5e1;
+}
+html #container #main #current-weather, body #container #main #current-weather {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+html #container #main #current-weather #main-info, body #container #main #current-weather #main-info {
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(35, 40, 60);
+}
+html #container #main #current-weather #main-info #temp, body #container #main #current-weather #main-info #temp {
+  display: flex;
+  gap: 1rem;
+}
+html #container #main #current-weather #main-info .units-switcher, body #container #main #current-weather #main-info .units-switcher {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+html #container #main #current-weather #main-info .units-switcher:hover, body #container #main #current-weather #main-info .units-switcher:hover {
+  transition: all 0.3s;
+  color: rgb(186, 216, 255);
+}
+html #container #main #current-weather #main-info .location, body #container #main #current-weather #main-info .location {
+  font-size: 1.7rem;
+}
+html #container #main #current-weather #main-info #main-info > .search-field, body #container #main #current-weather #main-info #main-info > .search-field {
+  background-color: transparent;
+  border-bottom: #fff solid 1px;
+  outline: none;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  width: 9rem;
+  text-align: center;
+}
+html #container #main #current-weather #main-info #main-info > .search-field:hover, body #container #main #current-weather #main-info #main-info > .search-field:hover {
+  transition: all 0.3s;
+  width: 13rem;
+}
+html #container #main #current-weather #main-info #main-info > .submit, body #container #main #current-weather #main-info #main-info > .submit {
+  cursor: pointer;
+  transition: all 0.3s;
+  color: rgb(255, 255, 255);
+}
+html #container #main #current-weather #main-info #main-info > .submit:hover, body #container #main #current-weather #main-info #main-info > .submit:hover {
+  transition: all 0.3s;
+  color: rgb(186, 216, 255);
+}
+html #container #main #current-weather #main-info #main-info > .weather-icon, body #container #main #current-weather #main-info #main-info > .weather-icon {
+  height: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+}
+html #container #main #current-weather #other-info, body #container #main #current-weather #other-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgb(25, 30, 50);
+  flex-grow: 1;
+}
+html #container #main #current-weather #other-info #other-info > *, body #container #main #current-weather #other-info #other-info > * {
+  padding: 1rem;
+}
+html #container #main #weather-forecast, body #container #main #weather-forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  flex-grow: 6;
+}
+html #container #main #weather-forecast #forecast-section-day-one, body #container #main #weather-forecast #forecast-section-day-one {
+  background-color: rgb(45, 50, 70);
+}
+html #container #main #weather-forecast #forecast-section-day-two, body #container #main #weather-forecast #forecast-section-day-two {
+  background-color: rgb(35, 40, 60);
+}
+html #container #main #weather-forecast #forecast-section-day-three, body #container #main #weather-forecast #forecast-section-day-three {
+  background-color: rgb(25, 30, 50);
+}
+html #container #main #weather-forecast #forecast-section-day-four, body #container #main #weather-forecast #forecast-section-day-four {
+  background-color: rgb(15, 20, 40);
+}
+html #container #main #weather-forecast #forecast-section-day-five, body #container #main #weather-forecast #forecast-section-day-five {
+  background-color: rgb(5, 10, 30);
+}
+html #container #main #weather-forecast .forecast-icon-day-one, body #container #main #weather-forecast .forecast-icon-day-one {
+  height: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+}
+html #container #main #weather-forecast .forecast-icon-day-two, body #container #main #weather-forecast .forecast-icon-day-two {
+  height: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+}
+html #container #main #weather-forecast .forecast-icon-day-three, body #container #main #weather-forecast .forecast-icon-day-three {
+  height: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+}
+html #container #main #weather-forecast .forecast-icon-day-four, body #container #main #weather-forecast .forecast-icon-day-four {
+  height: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+}
+html #container #main #weather-forecast .forecast-icon-day-five, body #container #main #weather-forecast .forecast-icon-day-five {
+  height: 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+}
+html #container #footer, body #container #footer {
+  height: 8%;
+  background-color: #0e0b2b;
+}/*# sourceMappingURL=main.css.map */

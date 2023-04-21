@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+$colors : (
+	main : #4338ca,
+	title : #f8fafc,
+	text : #cbd5e1,
+	placeholder : #94a3b8
+);
+
+@function color($color) {
+	@return map-get($colors, $color)
+};
+
+@mixin placeholder-styles {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	color: color(placeholder);
+}
+input::placeholder {
+	@include placeholder-styles;
+}
+input::-webkit-input-placeholder {
+	@include placeholder-styles;
+}
+input::-moz-placeholder {
+	@include placeholder-styles;
+}
+input:-ms-input-placeholder {
+	@include placeholder-styles;
+}  
+
+* {
+    box-sizing: border-box;
+	margin: 0;
+    padding: 0;
+	border: none;
+}
+html, body {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+    width: 100%;
+    height: 100%;
+
+	#container {
+		height: 100%;
+		width: 100%;
+
+		#header {
+			color :#f8fafc;
+			height: 8%;
+			background-color: darken(color(main), 40%);
+			position: relative;
+
+			.project {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-left: 2rem;
+			}
+		}
+
+		#main {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 84%;
+			text-align: center;
+			color: color(text);
+
+			#current-weather {
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+
+				#main-info {
+					display: flex;
+					height: 60%;
+					flex-direction: column;
+					justify-content: space-evenly;
+					align-items: center;
+					background-color: rgb(35, 40, 60);
+
+					#temp {
+						display: flex;
+						gap: 1rem;
+					}
+					.units-switcher {
+						transition: all 0.3s;
+						cursor: pointer;
+					}
+					.units-switcher:hover {
+						transition: all 0.3s;
+						color: rgb(186, 216, 255);
+					}
+					.location {
+						font-size: 1.7rem;
+					}
+					#main-info > .search-field {
+						background-color: transparent;
+						border-bottom: #fff solid 1px;
+						outline: none;
+						font-size: 1.2rem;
+						transition: all 0.3s;
+						width: 9rem;
+						text-align: center;
+					}
+					#main-info > .search-field:hover {
+						transition: all 0.3s;
+						width: 13rem;
+					}
+					#main-info > .submit {
+						cursor: pointer;
+						transition: all 0.3s;
+						color: rgb(255, 255, 255);
+					}
+					#main-info > .submit:hover {
+						transition: all 0.3s;
+						color: rgb(186, 216, 255);
+					}
+					#main-info > .weather-icon {
+						height: 3rem;
+						width: fit-content;
+						filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+					}
+					
+				}
+
+				#other-info {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					background-color: rgb(25, 30, 50);
+					flex-grow: 1;
+
+					#other-info > * {
+						padding: 1rem;
+					}
+				}
+			}
+
+			#weather-forecast {
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+				flex-grow: 6;
+				
+				
+				#forecast-section-day-one {
+					background-color: rgb(45, 50, 70);
+				}
+				#forecast-section-day-two {
+					background-color: rgb(35, 40, 60);
+				}
+				#forecast-section-day-three {
+					background-color: rgb(25, 30, 50);
+				}
+				#forecast-section-day-four {
+					background-color: rgb(15, 20, 40);
+				}
+				#forecast-section-day-five {
+					background-color: rgb(5, 10, 30);
+				}
+				.forecast-icon-day-one {
+					height: 3rem;
+					width: fit-content;
+					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+				}
+				.forecast-icon-day-two {
+					height: 3rem;
+					width: fit-content;
+					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+				}
+				.forecast-icon-day-three {
+					height: 3rem;
+					width: fit-content;
+					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+				}
+				.forecast-icon-day-four {
+					height: 3rem;
+					width: fit-content;
+					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+				}
+				.forecast-icon-day-five {
+					height: 3rem;
+					width: fit-content;
+					filter: drop-shadow(7px 7px 30px rgb(0, 0, 0));
+				}
+			}
+		}
+
+		#footer {
+			height: 8%;
+			background-color: darken(color(main), 40%);
+		}
+	}
+}
