@@ -8,11 +8,9 @@ link.type = 'image/x-icon';
 link.href = './images/favicon.png';
 document.getElementsByTagName('head')[0].appendChild(link);
 const invoke = () => {
-    createPage();
-    setTimeout(() => {
-		switchUnits();
-        searchWeather();
-        renderWeather('London');
-    }, 1000);
+	createPage();
+	switchUnits();
+	searchWeather();
+	renderWeather('London');
 };
 invoke();

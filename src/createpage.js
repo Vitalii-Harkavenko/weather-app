@@ -72,6 +72,6 @@ export default function createPage() {
         createContent('img', `forecast-icon-day-${day}`, '', el);
         createSection(`forecast-feels-like-day-${day}`, el);
         createContent('h3', 'title', 'Feels like', document.getElementById(`forecast-feels-like-day-${day}`));
-        createContent('p', `desc`, '', document.getElementById(`forecast-feels-like-day-${day}`));
+        createContent('p', `forecast-feels-like-day-${day}`, '', document.getElementById(`forecast-feels-like-day-${day}`));
     };
 };
