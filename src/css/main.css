@@ -140,7 +140,7 @@ html #container #main #current-weather #main-info .weather-icon, body #container
 }
 html #container #main #current-weather #other-info, body #container #main #current-weather #other-info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   background-color: #1b1653;
   flex-grow: 1;
   padding-top: 2rem;
