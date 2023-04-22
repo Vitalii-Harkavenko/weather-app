@@ -52,11 +52,11 @@ html, body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   width: 100%;
-  height: 100%;
+  height: 100vw;
 }
 html #container, body #container {
   height: 100%;
-  width: 100%;
+  width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 4rem 1fr 4rem;
@@ -75,7 +75,7 @@ html #container #header .project, body #container #header .project {
 html #container #main, body #container #main {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   text-align: center;
   color: #cbd5e1;
