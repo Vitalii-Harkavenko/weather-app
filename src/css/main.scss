@@ -12,6 +12,11 @@ $drop-filter : drop-shadow(7px 7px 1rem rgba(0, 0, 0, 0.5));
 @function color($color) {
 	@return map-get($colors, $color)
 };
+@mixin desktop {
+	@media (min-width : 700px) {
+		@content
+	}
+}
 
 @mixin placeholder-styles {
 	font-family: 'Montserrat', sans-serif;
@@ -35,7 +40,7 @@ input:-ms-input-placeholder {
     box-sizing: border-box;
 	margin: 0;
     padding: 0;
-	border: none;
+	border: 0;
 }
 h1, h2, h3 {
 	color: color(title);
@@ -51,12 +56,15 @@ h1, h2, h3 {
 html, body {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
+	background-color: darken(color(main), 30%);
 
 	#container {
+		width: 100%;
+		overflow: hidden;
 
 		#header {
 			height: 8vh;
-			width: 100vw;
+			width: 100%;
 			background-color: darken(color(main), 40%);
 			position: relative;
 
@@ -71,7 +79,7 @@ html, body {
 		#main {
 			display: flex;
 			flex-wrap: wrap;
-			width: 100vw;
+			width: 100%;
 			text-align: center;
 			color: color(text);
 
@@ -79,7 +87,7 @@ html, body {
 				display: flex;
 				flex-direction: column;
 				flex-grow: 1;
-				height: 84vh;
+				height: 84%;
 
 				#main-info {
 					display: flex;
@@ -159,36 +167,69 @@ html, body {
 
 			#weather-forecast {
 				display: grid;
-				grid-template-columns: repeat(5, 1fr);
+				grid-template-rows: repeat(5, 1fr);
+				grid-template-columns: 1fr;
+				@include desktop{
+					grid-template-columns: repeat(5, 1fr);
+					grid-template-rows: 1fr;
+				}
 				flex-grow: 2;
 				height: 84vh;
 
 				@for $i from 1 through 5 {
 					#forecast-section-day-#{$i} {
 						background-image: linear-gradient(
-							to bottom,
+							to right,
 							darken(darken(color(main), $i * 5%), 10%),
 							darken(color(main), $i * 5%),
 							darken(color(main), $i * 5%),
 							darken(darken(color(main), $i * 5%), 10%)
 						);
-						display: flex;
-						flex-direction: column;
+						display: grid;
+						grid-template-columns: repeat(4, 1fr);
 						align-items: center;
-						padding-top: 25vh;
-						min-height: 70vh;
-						height: 100%;
-						gap: 1rem;
-						padding-left: 0.5rem;
-						padding-right: 0.5rem;
+						justify-items: center;
+						@include desktop {
+							background-image: linear-gradient(
+								to bottom,
+								darken(darken(color(main), $i * 5%), 10%),
+								darken(color(main), $i * 5%),
+								darken(color(main), $i * 5%),
+								darken(darken(color(main), $i * 5%), 10%)
+							);
+							display: flex;
+							gap: 1rem;
+							flex-direction: column;
+							padding-top: 25vh;
+							height: 100%;
+							padding-left: 0.6rem;
+							padding-right: 0.6rem;
+						};
+					}
+					.forecast-temp-day-#{$i} {
+						@include desktop {
+							font-size: 1.5rem;
+						}
+						font-size: 1.1rem;
 					}
 					.forecast-icon-day-#{$i} {
-						height: 4rem;
+						@include desktop {
+							height: 4rem;
+						}
+						height: 3rem;
 						width: fit-content;
 						filter: $drop-filter;
 					}
-					.forecast-feels-like-day-#{$i} {
-						padding-top: 1rem;
+					#forecast-feels-like-day-#{$i} {
+						.title {
+							@include desktop {
+								font-size: 1.17rem;
+							}
+							font-size: 1rem;
+						}
+						.forecast-feels-like-day-#{$i} {
+							padding-top: 1rem;
+						}
 					}
 				}
 			}
@@ -196,7 +237,7 @@ html, body {
 
 		#footer {
 			height: 8vh;
-			width: 100vw;
+			width: 100%;
 			background-color: darken(color(main), 40%);
 		}
 	}
