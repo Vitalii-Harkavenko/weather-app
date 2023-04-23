@@ -51,18 +51,10 @@ h1, h2, h3 {
 html, body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  width: 100%;
-  height: 100vw;
-}
-html #container, body #container {
-  height: 100%;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 4rem 1fr 4rem;
 }
 html #container #header, body #container #header {
-  height: 100%;
+  height: 8vh;
+  width: 100vw;
   background-color: #0e0b2b;
   position: relative;
 }
@@ -76,7 +68,6 @@ html #container #main, body #container #main {
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
-  height: 100%;
   text-align: center;
   color: #cbd5e1;
 }
@@ -84,6 +75,7 @@ html #container #main #current-weather, body #container #main #current-weather {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  height: 84vh;
 }
 html #container #main #current-weather #main-info, body #container #main #current-weather #main-info {
   display: flex;
@@ -153,13 +145,14 @@ html #container #main #weather-forecast, body #container #main #weather-forecast
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   flex-grow: 2;
+  height: 84vh;
 }
 html #container #main #weather-forecast #forecast-section-day-1, body #container #main #weather-forecast #forecast-section-day-1 {
   background-image: linear-gradient(to bottom, #2e268f, #3b31b8, #3b31b8, #2e268f);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 25vh;
   min-height: 70vh;
   height: 100%;
   gap: 1rem;
@@ -179,8 +172,8 @@ html #container #main #weather-forecast #forecast-section-day-2, body #container
   background-image: linear-gradient(to bottom, #28217b, #352ca3, #352ca3, #28217b);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 25vh;
   min-height: 70vh;
   height: 100%;
   gap: 1rem;
@@ -200,8 +193,8 @@ html #container #main #weather-forecast #forecast-section-day-3, body #container
   background-image: linear-gradient(to bottom, #211b67, #2e268f, #2e268f, #211b67);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 25vh;
   min-height: 70vh;
   height: 100%;
   gap: 1rem;
@@ -221,8 +214,8 @@ html #container #main #weather-forecast #forecast-section-day-4, body #container
   background-image: linear-gradient(to bottom, #1b1653, #28217b, #28217b, #1b1653);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 25vh;
   min-height: 70vh;
   height: 100%;
   gap: 1rem;
@@ -242,8 +235,8 @@ html #container #main #weather-forecast #forecast-section-day-5, body #container
   background-image: linear-gradient(to bottom, #14113f, #211b67, #211b67, #14113f);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 25vh;
   min-height: 70vh;
   height: 100%;
   gap: 1rem;
@@ -260,6 +253,7 @@ html #container #main #weather-forecast .forecast-feels-like-day-5, body #contai
   padding-top: 1rem;
 }
 html #container #footer, body #container #footer {
-  height: 100%;
+  height: 8vh;
+  width: 100vw;
   background-color: #0e0b2b;
 }/*# sourceMappingURL=main.css.map */
